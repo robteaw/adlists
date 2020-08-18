@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Form -->
+<div class="container" id="form-container">
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input class="form-control form-control-lg" type="text" name="search" placeholder="Search">
+        <input class="form-control form-control-lg" type="text" name="min_price" placeholder="Mininum price">
+        <input class="form-control form-control-lg" type="text" name="max_price" placeholder="Maximum price">
+        <button class="submit" type="submit" name="action">Submit</button>
+    </form>
+</div>
+<!-- Card -->
+<div class="container">
+    <h1 class="card-title" style="text-align: center; margin-top: 50px;">"{{ search | title }}"</h1>
+
+    <div class="row">
+        {% for post in final_postings %}
+            <div class="col s10">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="{{ post.1 }}" target="_blank"><img src="{{ post.3 }}" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ post.0 }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ post.1 }}" target="_blank">View listing: Price {{ post.2 }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $function() {
+        var scroll = $(document).scrollTop();
+        var navHeight = $('.form-container').outerHeight();
+
+        $(window).scroll(function() {
+            var scroll = $(document).scrollTop();
+
+            if (scrolled > navHeight) {
+                $('.form-container').addClass('animate');
+            } else {
+                $('.form-container').removeClass('animate');
+            }
+            if (scrolled > scroll) {
+                $('.form-container').removeClass('sticky')
+            } else {
+                $('.form-container').addClass('sticky');
+            }
+            scroll = $(document).scrollTop();
+        });
+
+    });
+</script>
+
+{% endblock content %}
+
+<!-- 
+post.0 is the title 
+post.1 is the url 
+post.2 is the price 
+post.3 is the image 
+-->

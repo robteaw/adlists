@@ -1,0 +1,101 @@
+h2 {
+	margin-top: 50px;
+}
+
+/* Navbar */
+nav {
+	width: 100%;
+	z-index: 1; /* prevents hover images in front of navbar */
+}
+
+a {
+	padding-left: 100px;
+	font-size: 17px; /* nav link text */
+	font-weight: bold;
+}
+
+/* Hero */
+.hero h1 {
+	padding-top: 100px;
+}
+
+.hero p {
+	text-align: center;
+}
+
+i {
+	padding: 15px;
+}
+
+.fa-bolt {
+	color: #ffd700;
+}
+
+.fa-filter {
+	color: #b22222;
+}
+
+.fa-magic {
+	color: #000080;
+}
+
+.center p {
+	font-weight: bold;
+}
+
+/* Form */
+form {
+	padding-top: 50px;
+}
+
+.form-control {
+	margin: 10px;
+}
+
+.submit {
+	background: #00008b;
+	color: #fff;
+	margin: 12px 0 0 12px;
+	border-radius: 4px;
+	padding: 6px 12px;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.submit:hover {
+	background: #4169e1;
+}
+
+/* Card */
+.card-title {
+	margin-top: 50px;
+	padding-bottom: 25px;
+}
+
+.card {
+	height: 400px;
+	width: 400px;
+	overflow: hidden;
+	margin: 10px;
+	box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+	transition: box-shadow .7s ease;
+}
+
+.card p {
+	text-align: center;
+	padding: 5px;
+}
+
+.card-image {
+	height: 250px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+img {
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

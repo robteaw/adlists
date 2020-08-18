@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Hero -->
+  <div class="container hero">
+    <h1 style="text-align: center">Search on AdList?</h1>
+    <hr>
+    <div class="row">
+        <div class="col s4">
+            <!-- Promo Content 1 goes here -->
+            <div class="center">
+                <p><i class="fas fa-bolt fa-3x"></i></p>
+                <p>Craigslist web scraper</p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <!-- Promo Content 2 goes here -->
+            <div class="center">
+                <p><i class="fas fa-filter fa-3x"></i></p>
+                <p>Filter search by price</p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <!-- Promo Content 3 goes here -->
+            <div class="center">
+                <p><i class="fas fa-magic fa-3x"></i></p>
+                <p>Clean simple design</p>
+            </div>
+        </div>
+    </div>
+<hr>
+<!-- Form -->
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input class="form-control form-control-lg" type="text" name="search" placeholder="Search">
+        <input class="form-control form-control-lg" type="text" name="min_price" placeholder="Mininum price">
+        <input class="form-control form-control-lg" type="text" name="max_price" placeholder="Maximum price">
+        <button class="submit" type="submit" name="action">Submit</button>
+    </form>
+{% endblock content %}
