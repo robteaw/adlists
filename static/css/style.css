@@ -6,6 +6,8 @@ h2 {
 nav {
 	width: 100%;
 	z-index: 1; /* prevents hover images in front of navbar */
+	position: fixed;
+	top: 0;
 }
 
 a {

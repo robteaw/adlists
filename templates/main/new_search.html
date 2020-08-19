@@ -2,7 +2,7 @@
 
 {% block content %}
 <!-- Form -->
-<div class="container" id="form-container">
+<div class="container" id="form_container">
     <form action="{% url 'new_search' %}" method="post">
         {% csrf_token %}
         <input class="form-control form-control-lg" type="text" name="search" placeholder="Search">
@@ -33,30 +33,6 @@
         {% endfor %}
     </div>
 </div>
-
-<script>
-    $function() {
-        var scroll = $(document).scrollTop();
-        var navHeight = $('.form-container').outerHeight();
-
-        $(window).scroll(function() {
-            var scroll = $(document).scrollTop();
-
-            if (scrolled > navHeight) {
-                $('.form-container').addClass('animate');
-            } else {
-                $('.form-container').removeClass('animate');
-            }
-            if (scrolled > scroll) {
-                $('.form-container').removeClass('sticky')
-            } else {
-                $('.form-container').addClass('sticky');
-            }
-            scroll = $(document).scrollTop();
-        });
-
-    });
-</script>
 
 {% endblock content %}
 
